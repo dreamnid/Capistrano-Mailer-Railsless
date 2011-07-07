@@ -15,9 +15,9 @@ module Capistrano
     module RailslessCapistranoMailer
       def send_notification_email(cap, config = {}, *args)
         if CapRailslessMailer.respond_to? :notification_email
-          CapRailslessMailer.notification_email(cap, config, args).deliver
+          CapRailslessMailer.notification_email(cap, config, *args).deliver
         else
-          CapRailslessMailer.deliver_notification_email(cap, config, args)
+          CapRailslessMailer.deliver_notification_email(cap, config, *args)
         end
       end
     end
